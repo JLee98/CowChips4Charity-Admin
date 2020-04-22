@@ -2,11 +2,11 @@
   <div>
 
     <div class="date-filter-container">
-      <div class="headingDark">Filter by dates:</div>&nbsp 
+      <div class="headingDark">Filter by dates:</div>&nbsp
       <date-picker class="datePicker" name="startDate" v-model="filterStartDate" :config="datePickerOptions" v-on:input="performDonationUpdate()" placeholder="Start date"></date-picker>
       <date-picker class="datePicker" name="endDate" v-model="filterEndDate" :config="datePickerOptions" v-on:input="performDonationUpdate()" placeholder="End date"></date-picker>
     </div>
-   
+
     </br>
 
     <div>
@@ -56,7 +56,7 @@ import axios from "axios";
 import Vue from 'vue';
 
 import io from 'socket.io-client'
-var socket = io.connect('http://localhost:5555') //TODO: what port?
+var socket = io.connect(process.env.VUE_APP_WEBSOCKET_URL)
 var totalMoney = 0;
 var maxDonation = 0;
 var totalDonations = 0;
@@ -97,7 +97,7 @@ export default {
         }
       })
     },
-    getId() { 
+    getId() {
       return this.$route.params.id
     },
     getDonations(orgId) {
@@ -192,7 +192,7 @@ export default {
     display: inline-block;
   }
 
- 
+
 
 /*Dark Gray Font & Light Blue background*/
 .headingDark {
