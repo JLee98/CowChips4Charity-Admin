@@ -31,6 +31,7 @@
     "chance": "^1.0.18",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.7",
+    "cors": "^2.8.5",
     "css-vars-ponyfill": "^1.9.0",
     "express": "^4.16.4",
     "express-http-to-https": "^1.1.4",

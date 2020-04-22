@@ -3,6 +3,8 @@ const serveStatic = require('serve-static')
 const path = require('path')
 const app = express()
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+var cors = require('cors')
+app.use(cors())
 
 
 app.use(redirectToHTTPS([/localhost:(\d{4})/]))
